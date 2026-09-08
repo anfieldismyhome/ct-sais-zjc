@@ -1,0 +1,485 @@
+/* ==========================================================
+   THINKING ABOUT THINKING
+   Main Stylesheet
+   ========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+
+    --secondary:#0f172a;
+
+    --background:#f8fafc;
+
+    --surface:#ffffff;
+
+    --border:#e2e8f0;
+
+    --text:#1e293b;
+
+    --text-light:#64748b;
+
+    --success:#16a34a;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --radius:14px;
+
+    --transition:.25s ease;
+
+}
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+    line-height:1.6;
+
+}
+
+/* ==========================================================
+HEADER
+========================================================== */
+
+.hero{
+
+    background:linear-gradient(135deg,#2563eb,#1e40af);
+
+    color:white;
+
+    padding:70px 30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.hero h1{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+.hero p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    font-size:1.1rem;
+
+    opacity:.92;
+
+}
+
+/* ==========================================================
+SEARCH
+========================================================== */
+
+.search-section{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    margin-top:-35px;
+
+    padding:0 30px;
+
+}
+
+.search-container{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:20px;
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.search-container input{
+
+    flex:1;
+
+    padding:14px 18px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    font-size:16px;
+
+}
+
+.search-container button{
+
+    padding:13px 22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:var(--transition);
+
+}
+
+#clearButton{
+
+    background:#f1f5f9;
+
+}
+
+#clearButton:hover{
+
+    background:#e2e8f0;
+
+}
+
+#randomButton{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+#randomButton:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ==========================================================
+FILTERS
+========================================================== */
+
+.filter-section{
+
+    max-width:1400px;
+
+    margin:30px auto;
+
+    padding:0 30px;
+
+}
+
+.filter-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:15px;
+
+}
+
+.filter-grid select{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid var(--border);
+
+    background:white;
+
+    font-size:15px;
+
+}
+
+/* ==========================================================
+DASHBOARD
+========================================================== */
+
+.dashboard{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:0 30px 35px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.dashboard-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.dashboard-card h2{
+
+    font-size:2.4rem;
+
+    color:var(--primary);
+
+}
+
+.dashboard-card p{
+
+    margin-top:10px;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================================
+ACTIVITY GRID
+========================================================== */
+
+.activity-grid{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:20px 30px 60px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+
+    gap:25px;
+
+}
+
+/* Placeholder until JS creates cards */
+
+.empty-state{
+
+    grid-column:1/-1;
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:80px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ==========================================================
+MODAL
+========================================================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.7);
+
+    z-index:999;
+
+    overflow:auto;
+
+    padding:50px;
+
+}
+
+.modal-content{
+
+    background:white;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    border-radius:16px;
+
+    padding:45px;
+
+    position:relative;
+
+    animation:fadeIn .25s ease;
+
+}
+
+.close-button{
+
+    position:absolute;
+
+    top:20px;
+
+    right:25px;
+
+    border:none;
+
+    background:none;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+FOOTER
+========================================================== */
+
+footer{
+
+    background:#0f172a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+footer p:first-child{
+
+    font-weight:700;
+
+    margin-bottom:6px;
+
+}
+
+/* ==========================================================
+RESPONSIVE
+========================================================== */
+
+@media(max-width:900px){
+
+.search-container{
+
+    flex-direction:column;
+
+}
+
+.search-container input{
+
+    width:100%;
+
+}
+
+.search-container button{
+
+    width:100%;
+
+}
+
+.hero h1{
+
+    font-size:2.2rem;
+
+}
+
+.modal{
+
+    padding:20px;
+
+}
+
+.modal-content{
+
+    padding:30px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.dashboard{
+
+    grid-template-columns:1fr;
+
+}
+
+.filter-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.activity-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero{
+
+    padding:50px 20px;
+
+}
+
+.hero h1{
+
+    font-size:1.8rem;
+
+}
+
+}
